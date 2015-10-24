@@ -1,5 +1,8 @@
 <?php
 
+require_once __DIR__.'/curl.php';
+require_once __DIR__.'/success_lib.php';
+
 function update_fund($db = null, $fundeName = null)
 {
 	if ( $db == null || $fundeName == null) {
@@ -27,9 +30,9 @@ function update_fund($db = null, $fundeName = null)
 				$values[$key],
 				$date
 			]);
+			success_rank_insert($db, $localNewest['fundeName'], $date, '3');
 			echo 'finish. '.$localNewest['fundName'].' '.$localNewest['fundeName'].' '.$date."\n";
 		}
 	}
-	echo "Update finish. \n";
-
+	// echo "Update finish. \n";
 }

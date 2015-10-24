@@ -9,7 +9,7 @@ $stmt->execute();
 $data = $stmt->fetchAll();
 // 更新所有基金
 foreach ($data as $value) {
-	success_save($db, $value['fundeName'], '3');
+	success_batch($db, $value['fundeName'], '3');
 }
-echo "done. \n";
+echo "Done. \n";
 // success_save($db, 'FTH05', '1');
