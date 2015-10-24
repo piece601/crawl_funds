@@ -1,0 +1,5 @@
+切換成 www-data
+$ sudo -u www-data bash
+
+直行定時清除
+$ nohup sh -c 'while true; do sleep 21600; php /var/www/fund_project/update_fund.php; done' > /dev/null &
